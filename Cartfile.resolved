@@ -1,3 +1,3 @@
 github "ReactiveCocoa/ReactiveSwift" "5.0.1"
-github "WarpFactor/Spin" "99b5ff826d4ea617e094b854dee9ca72b4cf9170"
+github "WarpFactor/Spin.iOS" "d9fdd55d52a6070d3efe314467fe5e26a7da25f7"
 github "antitypical/Result" "4.1.0"

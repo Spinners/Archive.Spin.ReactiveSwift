@@ -1,2 +1,2 @@
 github "ReactiveCocoa/ReactiveSwift" ~> 5.0
-github "WarpFactor/Spin" "master"
+github "WarpFactor/Spin.iOS" "master"
