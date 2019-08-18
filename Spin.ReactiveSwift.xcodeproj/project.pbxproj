@@ -10,6 +10,10 @@
 		744E7E752308B7B3007C3A08 /* Spin_ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E6B2308B7B3007C3A08 /* Spin_ReactiveSwift.framework */; };
 		744E7E7A2308B7B3007C3A08 /* Spin_ReactiveSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E7E792308B7B3007C3A08 /* Spin_ReactiveSwiftTests.swift */; };
 		744E7E7C2308B7B3007C3A08 /* Spin_ReactiveSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 744E7E6E2308B7B3007C3A08 /* Spin_ReactiveSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		744E7E862308BB5B007C3A08 /* SignalProducer+Spin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E7E852308BB5B007C3A08 /* SignalProducer+Spin.swift */; };
+		744E7E8B2308D163007C3A08 /* Spin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E882308D163007C3A08 /* Spin.framework */; };
+		744E7E8C2308D163007C3A08 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E892308D163007C3A08 /* Result.framework */; };
+		744E7E8D2308D163007C3A08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E8A2308D163007C3A08 /* ReactiveSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 		744E7E742308B7B3007C3A08 /* Spin.ReactiveSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spin.ReactiveSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		744E7E792308B7B3007C3A08 /* Spin_ReactiveSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spin_ReactiveSwiftTests.swift; sourceTree = "<group>"; };
 		744E7E7B2308B7B3007C3A08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		744E7E852308BB5B007C3A08 /* SignalProducer+Spin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignalProducer+Spin.swift"; sourceTree = "<group>"; };
+		744E7E882308D163007C3A08 /* Spin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spin.framework; path = Carthage/Build/iOS/Spin.framework; sourceTree = "<group>"; };
+		744E7E892308D163007C3A08 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		744E7E8A2308D163007C3A08 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +44,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				744E7E8D2308D163007C3A08 /* ReactiveSwift.framework in Frameworks */,
+				744E7E8C2308D163007C3A08 /* Result.framework in Frameworks */,
+				744E7E8B2308D163007C3A08 /* Spin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +67,7 @@
 				744E7E6D2308B7B3007C3A08 /* Spin.ReactiveSwift */,
 				744E7E782308B7B3007C3A08 /* Spin.ReactiveSwiftTests */,
 				744E7E6C2308B7B3007C3A08 /* Products */,
+				744E7E872308D163007C3A08 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +85,7 @@
 			children = (
 				744E7E6E2308B7B3007C3A08 /* Spin_ReactiveSwift.h */,
 				744E7E6F2308B7B3007C3A08 /* Info.plist */,
+				744E7E852308BB5B007C3A08 /* SignalProducer+Spin.swift */,
 			);
 			path = Spin.ReactiveSwift;
 			sourceTree = "<group>";
@@ -84,6 +97,16 @@
 				744E7E7B2308B7B3007C3A08 /* Info.plist */,
 			);
 			path = Spin.ReactiveSwiftTests;
+			sourceTree = "<group>";
+		};
+		744E7E872308D163007C3A08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				744E7E8A2308D163007C3A08 /* ReactiveSwift.framework */,
+				744E7E892308D163007C3A08 /* Result.framework */,
+				744E7E882308D163007C3A08 /* Spin.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +171,7 @@
 				TargetAttributes = {
 					744E7E6A2308B7B3007C3A08 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					744E7E732308B7B3007C3A08 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -194,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				744E7E862308BB5B007C3A08 /* SignalProducer+Spin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +366,7 @@
 		744E7E802308B7B3007C3A08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -348,16 +374,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Spin.ReactiveSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.warpfactor.Spin-ReactiveSwift";
+				PRODUCT_BUNDLE_IDENTIFIER = io.warpfactor.Spin.ReactiveSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +398,7 @@
 		744E7E812308B7B3007C3A08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -373,14 +406,19 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Spin.ReactiveSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.warpfactor.Spin-ReactiveSwift";
+				PRODUCT_BUNDLE_IDENTIFIER = io.warpfactor.Spin.ReactiveSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -391,6 +429,7 @@
 		744E7E832308B7B3007C3A08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3V5265LQM9;
 				INFOPLIST_FILE = Spin.ReactiveSwiftTests/Info.plist;
@@ -399,7 +438,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.warpfactor.Spin-ReactiveSwiftTests";
+				PRODUCT_BUNDLE_IDENTIFIER = io.warpfactor.Spin.ReactiveSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -409,6 +448,7 @@
 		744E7E842308B7B3007C3A08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3V5265LQM9;
 				INFOPLIST_FILE = Spin.ReactiveSwiftTests/Info.plist;
@@ -417,7 +457,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.warpfactor.Spin-ReactiveSwiftTests";
+				PRODUCT_BUNDLE_IDENTIFIER = io.warpfactor.Spin.ReactiveSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
