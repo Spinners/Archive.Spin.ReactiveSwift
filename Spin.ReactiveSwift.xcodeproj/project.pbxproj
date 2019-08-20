@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AC3BB48230B82330019880E /* ReactiveSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 744E7E8A2308D163007C3A08 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1AC3BB49230B82330019880E /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 744E7E892308D163007C3A08 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1AC3BB4A230B82330019880E /* Spin.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 744E7E882308D163007C3A08 /* Spin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		744E7E752308B7B3007C3A08 /* Spin_ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E6B2308B7B3007C3A08 /* Spin_ReactiveSwift.framework */; };
 		744E7E7A2308B7B3007C3A08 /* Spin_ReactiveSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E7E792308B7B3007C3A08 /* Spin_ReactiveSwiftTests.swift */; };
 		744E7E7C2308B7B3007C3A08 /* Spin_ReactiveSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 744E7E6E2308B7B3007C3A08 /* Spin_ReactiveSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,6 +28,21 @@
 			remoteInfo = Spin.ReactiveSwift;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1AC3BB47230B82130019880E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1AC3BB48230B82330019880E /* ReactiveSwift.framework in CopyFiles */,
+				1AC3BB49230B82330019880E /* Result.framework in CopyFiles */,
+				1AC3BB4A230B82330019880E /* Spin.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		744E7E6B2308B7B3007C3A08 /* Spin_ReactiveSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spin_ReactiveSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +166,7 @@
 				744E7E702308B7B3007C3A08 /* Sources */,
 				744E7E712308B7B3007C3A08 /* Frameworks */,
 				744E7E722308B7B3007C3A08 /* Resources */,
+				1AC3BB47230B82130019880E /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -435,6 +454,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3V5265LQM9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Spin.ReactiveSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -454,6 +477,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3V5265LQM9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Spin.ReactiveSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
