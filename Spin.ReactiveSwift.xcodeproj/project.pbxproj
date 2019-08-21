@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1AC3BB48230B82330019880E /* ReactiveSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 744E7E8A2308D163007C3A08 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1AC3BB49230B82330019880E /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 744E7E892308D163007C3A08 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1AC3BB4A230B82330019880E /* Spin.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 744E7E882308D163007C3A08 /* Spin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1AC3BB48230B82330019880E /* ReactiveSwift.framework in 📦 Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E8A2308D163007C3A08 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1AC3BB49230B82330019880E /* Result.framework in 📦 Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E892308D163007C3A08 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1AC3BB4A230B82330019880E /* Spin.framework in 📦 Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E882308D163007C3A08 /* Spin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		744E7E752308B7B3007C3A08 /* Spin_ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E6B2308B7B3007C3A08 /* Spin_ReactiveSwift.framework */; };
 		744E7E7A2308B7B3007C3A08 /* Spin_ReactiveSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E7E792308B7B3007C3A08 /* Spin_ReactiveSwiftTests.swift */; };
 		744E7E7C2308B7B3007C3A08 /* Spin_ReactiveSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 744E7E6E2308B7B3007C3A08 /* Spin_ReactiveSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,16 +30,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1AC3BB47230B82130019880E /* CopyFiles */ = {
+		1AC3BB47230B82130019880E /* 📦 Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1AC3BB48230B82330019880E /* ReactiveSwift.framework in CopyFiles */,
-				1AC3BB49230B82330019880E /* Result.framework in CopyFiles */,
-				1AC3BB4A230B82330019880E /* Spin.framework in CopyFiles */,
+				1AC3BB48230B82330019880E /* ReactiveSwift.framework in 📦 Copy Frameworks */,
+				1AC3BB49230B82330019880E /* Result.framework in 📦 Copy Frameworks */,
+				1AC3BB4A230B82330019880E /* Spin.framework in 📦 Copy Frameworks */,
 			);
+			name = "📦 Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -166,7 +167,7 @@
 				744E7E702308B7B3007C3A08 /* Sources */,
 				744E7E712308B7B3007C3A08 /* Frameworks */,
 				744E7E722308B7B3007C3A08 /* Resources */,
-				1AC3BB47230B82130019880E /* CopyFiles */,
+				1AC3BB47230B82130019880E /* 📦 Copy Frameworks */,
 			);
 			buildRules = (
 			);
