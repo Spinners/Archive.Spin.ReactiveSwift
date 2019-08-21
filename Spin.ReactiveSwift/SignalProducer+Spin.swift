@@ -39,7 +39,7 @@ extension SignalProducer: Producer & Consumable {
         return self.on(value: function).eraseToAnyProducer()
     }
 
-    public func engage() -> Runtime {
+    public func spin() -> Runtime {
         return self.start()
     }
 }
