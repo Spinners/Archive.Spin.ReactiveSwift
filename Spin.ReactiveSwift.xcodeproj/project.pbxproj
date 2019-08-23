@@ -11,7 +11,7 @@
 		1AC3BB49230B82330019880E /* Result.framework in 📦 Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E892308D163007C3A08 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1AC3BB4A230B82330019880E /* Spin.framework in 📦 Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E882308D163007C3A08 /* Spin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		744E7E752308B7B3007C3A08 /* Spin_ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E6B2308B7B3007C3A08 /* Spin_ReactiveSwift.framework */; };
-		744E7E7A2308B7B3007C3A08 /* Spin_ReactiveSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E7E792308B7B3007C3A08 /* Spin_ReactiveSwiftTests.swift */; };
+		744E7E7A2308B7B3007C3A08 /* SignalProducer+SpinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E7E792308B7B3007C3A08 /* SignalProducer+SpinTests.swift */; };
 		744E7E7C2308B7B3007C3A08 /* Spin_ReactiveSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 744E7E6E2308B7B3007C3A08 /* Spin_ReactiveSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		744E7E862308BB5B007C3A08 /* SignalProducer+Spin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E7E852308BB5B007C3A08 /* SignalProducer+Spin.swift */; };
 		744E7E8B2308D163007C3A08 /* Spin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E882308D163007C3A08 /* Spin.framework */; };
@@ -50,7 +50,7 @@
 		744E7E6E2308B7B3007C3A08 /* Spin_ReactiveSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spin_ReactiveSwift.h; sourceTree = "<group>"; };
 		744E7E6F2308B7B3007C3A08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		744E7E742308B7B3007C3A08 /* Spin.ReactiveSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spin.ReactiveSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		744E7E792308B7B3007C3A08 /* Spin_ReactiveSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spin_ReactiveSwiftTests.swift; sourceTree = "<group>"; };
+		744E7E792308B7B3007C3A08 /* SignalProducer+SpinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignalProducer+SpinTests.swift"; sourceTree = "<group>"; };
 		744E7E7B2308B7B3007C3A08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		744E7E852308BB5B007C3A08 /* SignalProducer+Spin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignalProducer+Spin.swift"; sourceTree = "<group>"; };
 		744E7E882308D163007C3A08 /* Spin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spin.framework; path = Carthage/Build/iOS/Spin.framework; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		744E7E782308B7B3007C3A08 /* Spin.ReactiveSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				744E7E792308B7B3007C3A08 /* Spin_ReactiveSwiftTests.swift */,
+				744E7E792308B7B3007C3A08 /* SignalProducer+SpinTests.swift */,
 				744E7E7B2308B7B3007C3A08 /* Info.plist */,
 			);
 			path = Spin.ReactiveSwiftTests;
@@ -247,7 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				744E7E7A2308B7B3007C3A08 /* Spin_ReactiveSwiftTests.swift in Sources */,
+				744E7E7A2308B7B3007C3A08 /* SignalProducer+SpinTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

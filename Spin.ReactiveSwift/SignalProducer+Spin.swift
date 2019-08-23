@@ -27,10 +27,6 @@ extension SignalProducer: Producer & Consumable {
         return self.scan(value, reducer).eraseToAnyConsumable()
     }
     
-    public func toStream() -> Input {
-        return self
-    }
-
     public func consume(by: @escaping (Value) -> Void, on: Context) -> AnyConsumable<Value, Context, Runtime> {
         return self.observe(on: on).on(value: by).eraseToAnyConsumable()
     }
@@ -42,4 +38,16 @@ extension SignalProducer: Producer & Consumable {
     public func spin() -> Runtime {
         return self.start()
     }
+    
+    public func toReactiveStream() -> Input {
+        return self
+    }
 }
+
+public extension Disposable {
+    func disposed(by disposable: CompositeDisposable) {
+        disposable.add(self)
+    }
+}
+
+public typealias Spin<Value, Error: Error> = AnyProducer<SignalProducer<Value, Error>, Value, SignalProducer<Value, Error>.Context, SignalProducer<Value, Error>.Runtime>
