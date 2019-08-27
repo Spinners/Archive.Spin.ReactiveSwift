@@ -7,6 +7,7 @@
 //
 
 import ReactiveSwift
+import Spin
 import Spin_ReactiveSwift
 import XCTest
 

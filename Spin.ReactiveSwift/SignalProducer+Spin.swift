@@ -49,5 +49,3 @@ public extension Disposable {
         disposable.add(self)
     }
 }
-
-public typealias Spin<Value, Error: Error> = AnyProducer<SignalProducer<Value, Error>, Value, SignalProducer<Value, Error>.Executer, SignalProducer<Value, Error>.Lifecycle>
