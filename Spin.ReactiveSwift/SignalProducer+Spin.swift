@@ -12,30 +12,30 @@ import Spin
 extension SignalProducer: Producer & Consumable {
     public typealias Input = SignalProducer
     public typealias Value = Value
-    public typealias Context = Scheduler
-    public typealias Runtime = Disposable
+    public typealias Executer = Scheduler
+    public typealias Lifecycle = Disposable
 
-    public static func from(function: () -> Input) -> AnyProducer<Input, Value, Context, Runtime> {
+    public static func from(function: () -> Input) -> AnyProducer<Input, Value, Executer, Lifecycle> {
         return function().eraseToAnyProducer()
     }
 
-    public func compose<Output: Producer>(function: (Input) -> Output) -> AnyProducer<Output.Input, Output.Value, Output.Context, Output.Runtime> {
+    public func compose<Output: Producer>(function: (Input) -> Output) -> AnyProducer<Output.Input, Output.Value, Output.Executer, Output.Lifecycle> {
         return function(self).eraseToAnyProducer()
     }
 
-    public func scan<Result>(initial value: Result, reducer: @escaping (Result, Value) -> Result) -> AnyConsumable<Result, Context, Runtime> {
+    public func scan<Result>(initial value: Result, reducer: @escaping (Result, Value) -> Result) -> AnyConsumable<Result, Executer, Lifecycle> {
         return self.scan(value, reducer).eraseToAnyConsumable()
     }
     
-    public func consume(by: @escaping (Value) -> Void, on: Context) -> AnyConsumable<Value, Context, Runtime> {
+    public func consume(by: @escaping (Value) -> Void, on: Executer) -> AnyConsumable<Value, Executer, Lifecycle> {
         return self.observe(on: on).on(value: by).eraseToAnyConsumable()
     }
 
-    public func spy(function: @escaping (Value) -> Void) -> AnyProducer<Input, Value, Context, Runtime> {
+    public func spy(function: @escaping (Value) -> Void) -> AnyProducer<Input, Value, Executer, Lifecycle> {
         return self.on(value: function).eraseToAnyProducer()
     }
 
-    public func spin() -> Runtime {
+    public func spin() -> Lifecycle {
         return self.start()
     }
     
@@ -50,4 +50,4 @@ public extension Disposable {
     }
 }
 
-public typealias Spin<Value, Error: Error> = AnyProducer<SignalProducer<Value, Error>, Value, SignalProducer<Value, Error>.Context, SignalProducer<Value, Error>.Runtime>
+public typealias Spin<Value, Error: Error> = AnyProducer<SignalProducer<Value, Error>, Value, SignalProducer<Value, Error>.Executer, SignalProducer<Value, Error>.Lifecycle>
