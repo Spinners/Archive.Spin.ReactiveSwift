@@ -1,2 +1,2 @@
 github "ReactiveCocoa/ReactiveSwift" "6.1.0"
-github "WarpFactor/Spin.iOS" "fd231ee442cb9470ba56f5e54e76e4350067bd50"
+github "Spinners/Spin.iOS" "fd231ee442cb9470ba56f5e54e76e4350067bd50"
