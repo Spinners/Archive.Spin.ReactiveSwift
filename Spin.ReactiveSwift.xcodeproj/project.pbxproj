@@ -8,14 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1AC3BB48230B82330019880E /* ReactiveSwift.framework in 📦 Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E8A2308D163007C3A08 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1AC3BB49230B82330019880E /* Result.framework in 📦 Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E892308D163007C3A08 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1AC3BB4A230B82330019880E /* Spin.framework in 📦 Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E882308D163007C3A08 /* Spin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		744E7E752308B7B3007C3A08 /* Spin_ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E6B2308B7B3007C3A08 /* Spin_ReactiveSwift.framework */; };
 		744E7E7A2308B7B3007C3A08 /* SignalProducer+SpinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E7E792308B7B3007C3A08 /* SignalProducer+SpinTests.swift */; };
 		744E7E7C2308B7B3007C3A08 /* Spin_ReactiveSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 744E7E6E2308B7B3007C3A08 /* Spin_ReactiveSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		744E7E862308BB5B007C3A08 /* SignalProducer+Spin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E7E852308BB5B007C3A08 /* SignalProducer+Spin.swift */; };
 		744E7E8B2308D163007C3A08 /* Spin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E882308D163007C3A08 /* Spin.framework */; };
-		744E7E8C2308D163007C3A08 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E892308D163007C3A08 /* Result.framework */; };
 		744E7E8D2308D163007C3A08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E8A2308D163007C3A08 /* ReactiveSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +35,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				1AC3BB48230B82330019880E /* ReactiveSwift.framework in 📦 Copy Frameworks */,
-				1AC3BB49230B82330019880E /* Result.framework in 📦 Copy Frameworks */,
 				1AC3BB4A230B82330019880E /* Spin.framework in 📦 Copy Frameworks */,
 			);
 			name = "📦 Copy Frameworks";
@@ -64,7 +61,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				744E7E8D2308D163007C3A08 /* ReactiveSwift.framework in Frameworks */,
-				744E7E8C2308D163007C3A08 /* Result.framework in Frameworks */,
 				744E7E8B2308D163007C3A08 /* Spin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
