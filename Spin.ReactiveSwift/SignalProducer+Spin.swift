@@ -9,34 +9,41 @@
 import ReactiveSwift
 import Spin
 
-extension SignalProducer: Producer & Consumable {
-    public typealias Input = SignalProducer
+extension SignalProducer: Consumable {
     public typealias Value = Value
     public typealias Executer = Scheduler
     public typealias Lifecycle = Disposable
-
-    public static func from(function: () -> Input) -> AnyProducer<Input, Value, Executer, Lifecycle> {
-        return function().eraseToAnyProducer()
-    }
-
-    public func compose<Output: Producer>(function: (Input) -> Output) -> AnyProducer<Output.Input, Output.Value, Output.Executer, Output.Lifecycle> {
-        return function(self).eraseToAnyProducer()
-    }
-
-    public func scan<Result>(initial value: Result, reducer: @escaping (Result, Value) -> Result) -> AnyConsumable<Result, Executer, Lifecycle> {
-        return self.scan(value, reducer).eraseToAnyConsumable()
-    }
     
     public func consume(by: @escaping (Value) -> Void, on: Executer) -> AnyConsumable<Value, Executer, Lifecycle> {
         return self.observe(on: on).on(value: by).eraseToAnyConsumable()
     }
-
-    public func spy(function: @escaping (Value) -> Void) -> AnyProducer<Input, Value, Executer, Lifecycle> {
-        return self.on(value: function).eraseToAnyProducer()
-    }
-
+    
     public func spin() -> Lifecycle {
         return self.start()
+    }
+}
+
+extension SignalProducer: Producer where Value: Command, Value.Stream: SignalProtocol {
+    public typealias Input = SignalProducer
+    
+    public func feedback(initial value: Value.State, reducer: @escaping (Value.State, Value.Stream.Value) -> Value.State) -> AnyConsumable<Value.State, Executer, Lifecycle> {
+        let currentState = MutableProperty<Value.State>(value)
+        
+        return self
+            .withLatest(from: currentState.producer)
+            .flatMapError { _ in return SignalProducer<(Value, Value.State), Never>.empty }
+            .flatMap(.concat) { args -> SignalProducer<Value.Stream.Value, Never> in
+                let (command, state) = args
+                return command.execute(basedOn: state).signal.producer.flatMapError { _ in return SignalProducer<Value.Stream.Value, Never>.empty }
+        }
+        .scan(value, reducer)
+        .prefix(value: value)
+        .on(value: { currentState.swap($0) })
+        .eraseToAnyConsumable()
+    }
+    
+    public func spy(function: @escaping (Value) -> Void) -> AnyProducer<Input, Value, Executer, Lifecycle> {
+        return self.on(value: function).eraseToAnyProducer()
     }
     
     public func toReactiveStream() -> Input {
