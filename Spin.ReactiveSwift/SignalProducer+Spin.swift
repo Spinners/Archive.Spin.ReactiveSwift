@@ -15,7 +15,10 @@ extension SignalProducer: Consumable {
     public typealias Lifecycle = Disposable
     
     public func consume(by: @escaping (Value) -> Void, on: Executer) -> AnyConsumable<Value, Executer, Lifecycle> {
-        return self.observe(on: on).on(value: by).eraseToAnyConsumable()
+        return self
+            .observe(on: on)
+            .on(value: by)
+            .eraseToAnyConsumable()
     }
     
     public func spin() -> Lifecycle {
@@ -23,7 +26,7 @@ extension SignalProducer: Consumable {
     }
 }
 
-extension SignalProducer: Producer where Value: Command, Value.Stream: SignalProtocol {
+extension SignalProducer: Producer where Value: Command, Value.Stream: SignalProducerProtocol, Error == Never {
     public typealias Input = SignalProducer
     
     public func feedback(initial value: Value.State, reducer: @escaping (Value.State, Value.Stream.Value) -> Value.State) -> AnyConsumable<Value.State, Executer, Lifecycle> {
@@ -31,10 +34,9 @@ extension SignalProducer: Producer where Value: Command, Value.Stream: SignalPro
         
         return self
             .withLatest(from: currentState.producer)
-            .flatMapError { _ in return SignalProducer<(Value, Value.State), Never>.empty }
             .flatMap(.concat) { args -> SignalProducer<Value.Stream.Value, Never> in
                 let (command, state) = args
-                return command.execute(basedOn: state).signal.producer.flatMapError { _ in return SignalProducer<Value.Stream.Value, Never>.empty }
+                return command.execute(basedOn: state).producer.flatMapError { _ in return SignalProducer<Value.Stream.Value, Never>.empty }
         }
         .scan(value, reducer)
         .prefix(value: value)
@@ -43,7 +45,9 @@ extension SignalProducer: Producer where Value: Command, Value.Stream: SignalPro
     }
     
     public func spy(function: @escaping (Value) -> Void) -> AnyProducer<Input, Value, Executer, Lifecycle> {
-        return self.on(value: function).eraseToAnyProducer()
+        return self
+            .on(value: function)
+            .eraseToAnyProducer()
     }
     
     public func toReactiveStream() -> Input {
