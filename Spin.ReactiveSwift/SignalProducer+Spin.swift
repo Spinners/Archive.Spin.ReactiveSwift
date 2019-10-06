@@ -44,11 +44,11 @@ extension SignalProducer: Producer where Value: Command, Value.Stream: SignalPro
         .eraseToAnyConsumable()
     }
     
-    public func spy(function: @escaping (Value) -> Void) -> AnyProducer<Input, Value, Executer, Lifecycle> {
-        return self
-            .on(value: function)
-            .eraseToAnyProducer()
-    }
+//    public func spy(function: @escaping (Value) -> Void) -> AnyProducer<Input, Value, Executer, Lifecycle> {
+//        return self
+//            .on(value: function)
+//            .eraseToAnyProducer()
+//    }
     
     public func toReactiveStream() -> Input {
         return self

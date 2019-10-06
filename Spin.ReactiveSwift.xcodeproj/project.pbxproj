@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1AC3BB48230B82330019880E /* ReactiveSwift.framework in 📦 Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E8A2308D163007C3A08 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1AC3BB4A230B82330019880E /* Spin.framework in 📦 Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E882308D163007C3A08 /* Spin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		744E7E752308B7B3007C3A08 /* Spin_ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E6B2308B7B3007C3A08 /* Spin_ReactiveSwift.framework */; };
 		744E7E7A2308B7B3007C3A08 /* SignalProducer+SpinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E7E792308B7B3007C3A08 /* SignalProducer+SpinTests.swift */; };
 		744E7E7C2308B7B3007C3A08 /* Spin_ReactiveSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 744E7E6E2308B7B3007C3A08 /* Spin_ReactiveSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		744E7E862308BB5B007C3A08 /* SignalProducer+Spin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E7E852308BB5B007C3A08 /* SignalProducer+Spin.swift */; };
-		744E7E8B2308D163007C3A08 /* Spin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E882308D163007C3A08 /* Spin.framework */; };
 		744E7E8D2308D163007C3A08 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E8A2308D163007C3A08 /* ReactiveSwift.framework */; };
+		747DDD6C234A7457003A0DCB /* Spin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E882308D163007C3A08 /* Spin.framework */; };
+		747DDD6D234A7457003A0DCB /* Spin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E882308D163007C3A08 /* Spin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		747DDD6F234A7488003A0DCB /* ReactiveSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E8A2308D163007C3A08 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		747DDD70234A74A0003A0DCB /* Spin.framework in 📦 Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 744E7E882308D163007C3A08 /* Spin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +36,22 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				747DDD70234A74A0003A0DCB /* Spin.framework in 📦 Copy Frameworks */,
 				1AC3BB48230B82330019880E /* ReactiveSwift.framework in 📦 Copy Frameworks */,
-				1AC3BB4A230B82330019880E /* Spin.framework in 📦 Copy Frameworks */,
 			);
 			name = "📦 Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		747DDD6E234A7457003A0DCB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				747DDD6F234A7488003A0DCB /* ReactiveSwift.framework in Embed Frameworks */,
+				747DDD6D234A7457003A0DCB /* Spin.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -60,8 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				747DDD6C234A7457003A0DCB /* Spin.framework in Frameworks */,
 				744E7E8D2308D163007C3A08 /* ReactiveSwift.framework in Frameworks */,
-				744E7E8B2308D163007C3A08 /* Spin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +160,7 @@
 				744E7E672308B7B3007C3A08 /* Sources */,
 				744E7E682308B7B3007C3A08 /* Frameworks */,
 				744E7E692308B7B3007C3A08 /* Resources */,
+				747DDD6E234A7457003A0DCB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

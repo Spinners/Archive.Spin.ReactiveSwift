@@ -134,31 +134,31 @@ final class SignalProducer_SpinTests: XCTestCase {
         XCTAssertTrue(type(of: resultStream) == type(of: fromClosureResult))
     }
 
-    func testSpy_sees_all_the_events_from_the_inputStream() {
-
-        // Given: some commands to emit as a stream
-        let inputStream = SignalProducer<AnyCommand<SignalProducer<MockAction, TestError>, MockState>, Never>([
-            IncrementCommand().eraseToAnyCommand(),
-            ResetCommand().eraseToAnyCommand()
-            ])
-
-        var spiedCommands: [AnyCommand<SignalProducer<MockAction, TestError>, MockState>] = []
-
-        // When: spying the stream of commands
-        _ = Spinner
-            .from { inputStream }
-            .spy { spiedCommands.append($0) }
-            .toReactiveStream()
-            .wait()
-
-        // Then: consumes values are the same os the input values
-        XCTAssertEqual(spiedCommands.count, 2)
-        let action1 = try? spiedCommands[0].execute(basedOn: MockState(value: 0)).first()?.get()
-        let action2 = try? spiedCommands[1].execute(basedOn: MockState(value: 0)).first()?.get()
-
-        XCTAssertEqual(action1!, .increment)
-        XCTAssertEqual(action2!, .reset)
-    }
+//    func testSpy_sees_all_the_events_from_the_inputStream() {
+//
+//        // Given: some commands to emit as a stream
+//        let inputStream = SignalProducer<AnyCommand<SignalProducer<MockAction, TestError>, MockState>, Never>([
+//            IncrementCommand().eraseToAnyCommand(),
+//            ResetCommand().eraseToAnyCommand()
+//            ])
+//
+//        var spiedCommands: [AnyCommand<SignalProducer<MockAction, TestError>, MockState>] = []
+//
+//        // When: spying the stream of commands
+//        _ = Spinner
+//            .from { inputStream }
+//            .spy { spiedCommands.append($0) }
+//            .toReactiveStream()
+//            .wait()
+//
+//        // Then: consumes values are the same os the input values
+//        XCTAssertEqual(spiedCommands.count, 2)
+//        let action1 = try? spiedCommands[0].execute(basedOn: MockState(value: 0)).first()?.get()
+//        let action2 = try? spiedCommands[1].execute(basedOn: MockState(value: 0)).first()?.get()
+//
+//        XCTAssertEqual(action1!, .increment)
+//        XCTAssertEqual(action2!, .reset)
+//    }
 
     func testFeedback_computes_the_expected_states() {
         let exp = expectation(description: "feedback")
@@ -222,7 +222,8 @@ final class SignalProducer_SpinTests: XCTestCase {
 
     func testExecuters_are_correctly_applied () {
         let expectations = expectation(description: "schedulers")
-        expectations.expectedFulfillmentCount = 6
+//        expectations.expectedFulfillmentCount = 6
+        expectations.expectedFulfillmentCount = 5
 
         let fromScheduler = QueueScheduler(qos: .userInteractive, name: "FROM_QUEUE", targeting: DispatchQueue(label: "FROM_QUEUE"))
         let consumeScheduler1 = QueueScheduler(qos: .userInteractive, name: "CONSUME_QUEUE_1", targeting: DispatchQueue(label: "CONSUME_QUEUE_1"))
@@ -242,10 +243,10 @@ final class SignalProducer_SpinTests: XCTestCase {
                 return inputStream.observe(on: fromScheduler)
             }
             // switch to FROM_QUEUE after from
-            .spy(function: { _ in
-                expectations.fulfill()
-                XCTAssertEqual(DispatchQueue.currentLabel, "FROM_QUEUE")
-            })
+//            .spy(function: { _ in
+//                expectations.fulfill()
+//                XCTAssertEqual(DispatchQueue.currentLabel, "FROM_QUEUE")
+//            })
             .feedback(initial: .zero, reducer: reducer)
             // switch to CONSUME_QUEUE_1 before consume
             .consume(by: { _ in
