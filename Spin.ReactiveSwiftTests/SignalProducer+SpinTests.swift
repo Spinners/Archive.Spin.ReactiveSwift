@@ -164,7 +164,7 @@ final class SignalProducer_SpinTests: XCTestCase {
         let exp = expectation(description: "feedback")
         exp.expectedFulfillmentCount = 7
         var receivedStates = [MockState]()
-
+        
         // Given: some commands to emit as a stream
         let inputStream = SignalProducer<AnyCommand<SignalProducer<MockAction, TestError>, MockState>, Never>([
             IncrementCommand().eraseToAnyCommand(),
@@ -178,7 +178,7 @@ final class SignalProducer_SpinTests: XCTestCase {
         // When: runing a feedback loop on the stream of commands
         Spinner
             .from { inputStream }
-            .feedback(initial: .zero, reducer: reducer)
+            .executeAndScan(initial: .zero, reducer: reducer)
             .consume(by: { state in
                 exp.fulfill()
                 receivedStates.append(state)
@@ -206,7 +206,7 @@ final class SignalProducer_SpinTests: XCTestCase {
         // When: runing a feedback loop on the stream of commands
         Spinner
             .from { inputStream }
-            .feedback(initial: .zero, reducer: reducer)
+            .executeAndScan(initial: .zero, reducer: reducer)
             .consume(by: { state in
                 exp.fulfill()
                 receivedStates.append(state)
@@ -247,7 +247,7 @@ final class SignalProducer_SpinTests: XCTestCase {
 //                expectations.fulfill()
 //                XCTAssertEqual(DispatchQueue.currentLabel, "FROM_QUEUE")
 //            })
-            .feedback(initial: .zero, reducer: reducer)
+            .executeAndScan(initial: .zero, reducer: reducer)
             // switch to CONSUME_QUEUE_1 before consume
             .consume(by: { _ in
                 expectations.fulfill()

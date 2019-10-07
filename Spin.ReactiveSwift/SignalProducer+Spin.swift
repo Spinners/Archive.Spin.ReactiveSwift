@@ -29,7 +29,7 @@ extension SignalProducer: Consumable {
 extension SignalProducer: Producer where Value: Command, Value.Stream: SignalProducerProtocol, Error == Never {
     public typealias Input = SignalProducer
     
-    public func feedback(initial value: Value.State, reducer: @escaping (Value.State, Value.Stream.Value) -> Value.State) -> AnyConsumable<Value.State, Executer, Lifecycle> {
+    public func executeAndScan(initial value: Value.State, reducer: @escaping (Value.State, Value.Stream.Value) -> Value.State) -> AnyConsumable<Value.State, Executer, Lifecycle> {
         let currentState = MutableProperty<Value.State>(value)
         
         return self
